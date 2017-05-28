@@ -1,7 +1,6 @@
 // public/js/main.js
 
-
-angular.module('contatooh', ['ngRoute'])
+var app = angular.module('contatooh', ['ngRoute', 'ngResource'])
 	.config(function($routeProvider) {
 
 		$routeProvider.when('/contatos', {
