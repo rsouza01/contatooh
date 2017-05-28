@@ -14,6 +14,26 @@ module.exports = function() {
 		res.json(contatos);
 	};
 
+
+	controller.salvaContato = function(req, res) {
+
+	}
+
+
+	controller.removeContato = function(req, res) {
+
+		var idContato = req.params.id;
+
+		console.log('API:remove contato:' + idContato);
+
+		contatos = contatos.filter(function(contato) {
+			return contato._id != idContato;
+		});
+
+		res.send(204).end();
+
+	}
+
 	controller.obtemContato = function(req, res) {
 
 		var idContato = req.params.id;
