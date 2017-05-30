@@ -1,3 +1,5 @@
+![Logo](logo.png)
+
 # CONTATOOH - MEAN framework application
 
 Small tutorial with the following technologies:
