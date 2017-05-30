@@ -11,9 +11,9 @@ module.exports = function() {
 	var Usuario = mongoose.model('Usuario');
 
 	passport.use(new GitHubStrategy({
-			clientID: 'SEU CLIENT ID',
-			clientSecret: 'SEU CLIENT PASSWORD',
-			callbackURL: 'SUA REDIRECT_URI'
+			clientID: '514a3a7b77aa194aa439',
+			clientSecret: '36d5adeedd91e13cbf14ce4fcee15602b7fe6142',
+			callbackURL: 'http://localhost:3000/auth/github/callback'
 		},
 		function(accessToken, refreshToken, profile, done) {
 
