@@ -22,22 +22,6 @@ Small tutorial with the following technologies:
 * Mongo console:
 	mongo --port 27017 --host localhost
 
-* Scripts
-
-
-	var contato1 = { "nome" : "Contato 1 Mongo", "email" : "cont1@empresa.com.br" }
-	var contato2 = { "nome" : "Contato 2 Mongo", "email" : "cont2@empresa.com.br" }
-	var contato3 = { "nome" : "Contato 3 Mongo", "email" : "cont3@empresa.com.br" }
-	db.contatos.insert(contato1)
-	db.contatos.insert(contato2)
-	db.contatos.insert(contato3)
-	db.contatos.find()
-
-	var criterio = { "email" : "cont2@empresa.com.br" }
-	var contato = db.contatos.find(criterio)
-	contato
-
-
 
 ## Notes
 
