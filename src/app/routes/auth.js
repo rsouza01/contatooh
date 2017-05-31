@@ -11,7 +11,16 @@ module.exports = function(app) {
 		successRedirect: '/'
 	}));
 
+	app.get('/logout', function(req, res) {
+		req.logOut();
+		res.redirect('/');
+
+	});
+
 	app.get('/', function(req, res, next) {
+
+		console.log('Autenticado ' + req.isAuthenticated());
+
 
 		if(req.isAuthenticated()) {
 			// permite que outras rotas sejam processadas

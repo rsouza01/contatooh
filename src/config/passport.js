@@ -1,10 +1,10 @@
 // config/passport.js
 
 var passport = require('passport');
+var GitHubStrategy = require('passport-github').Strategy;
 var mongoose = require('mongoose');
 
 
-var GitHubStrategy = require('passport-github').Strategy;
 
 module.exports = function() {
 
@@ -15,22 +15,18 @@ module.exports = function() {
 			clientSecret: '36d5adeedd91e13cbf14ce4fcee15602b7fe6142',
 			callbackURL: 'http://localhost:3000/auth/github/callback'
 		},
-		function(accessToken, refreshToken, profile, done) {
-
+		function (accessToken, refreshToken, profile, done) {
 			Usuario.findOrCreate(
-				{ "login" : profile.username},
-				{ "nome" : profile.username},
-				function(erro, usuario) {
-					if(erro) {
+				{ "login": profile.username },
+				{ "nome": profile.username },
+				function (erro, usuario) {
+					if (erro) {
 						console.log(erro);
 						return done(erro);
 					}
-
 					return done(null, usuario);
-				}
-			);
-		}
-	));
+				});
+	}));
 
 	/*
 	Chamado apenas UMA vez e recebe o usuário do nosso

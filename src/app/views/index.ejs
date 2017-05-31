@@ -19,6 +19,10 @@
 		<title>Bem-vindo</title>
 	</head>
 	<body class="container">
+		<div class="text-right">
+			<p>Logado como: <span id="usuario-logado"><%=usuarioLogado %><span></p>
+			<a href="/logout">Logout</a>
+		</div>
 		<div ng-view></div>
 	</body>
 </html>

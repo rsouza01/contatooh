@@ -8,7 +8,6 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
 
-
 module.exports = function() {
 
 	var app = express();
@@ -18,13 +17,6 @@ module.exports = function() {
 
 	// middleware
 	app.use(express.static('./public'));
-	app.use(bodyParser.urlencoded({extended: true}));
-	app.use(bodyParser.json());
-	app.use(require('method-override')())
-
-	// EJS Templates (http://embeddedjs.com)
-	app.set('view engine', 'ejs');
-	app.set('views','./app/views');
 
 	app.use(cookieParser());
 	app.use(session(
@@ -38,6 +30,13 @@ module.exports = function() {
 	app.use(passport.initialize());
 	app.use(passport.session());
 
+	// EJS Templates (http://embeddedjs.com)
+	app.set('view engine', 'ejs');
+	app.set('views','./app/views');
+
+	app.use(bodyParser.urlencoded({extended: true}));
+	app.use(bodyParser.json());
+	app.use(require('method-override')())
 
 	load('models', {cwd: 'app'})
 		.then('controllers')
