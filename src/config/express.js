@@ -8,11 +8,14 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
 
+var helmet = require('helmet');
+
+
 module.exports = function() {
 
 	var app = express();
 
-	// variável de ambiente
+	// variï¿½vel de ambiente
 	app.set('port', 3000);
 
 	// middleware
@@ -30,6 +33,21 @@ module.exports = function() {
 	app.use(passport.initialize());
 	app.use(passport.session());
 
+	app.use(helmet());
+
+	//Esconde a tecnologia
+	app.disable('x-powered-by');
+	
+	//Impede acesso via iphrame
+	app.use(helmet.xframe());
+
+	//Filtro XSS
+	app.use(helmet.xssFilter());	
+
+	//Impede inferÃªncia de Mime Type
+	app.use(helmet.nosniff());
+
+
 	// EJS Templates (http://embeddedjs.com)
 	app.set('view engine', 'ejs');
 	app.set('views','./app/views');
@@ -44,5 +62,9 @@ module.exports = function() {
 		.then('routes')
 		.into(app);
 
+	app.get('*', function(req, res) {
+		res.status(404).render('404');
+	});
+	
 	return app;
 };

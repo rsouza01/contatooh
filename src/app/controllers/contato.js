@@ -4,6 +4,8 @@
 module.exports = function(app) {
 
 	var controller = {};
+	var sanitize = require('mongo-sanitize');
+
 
 	var Contato = app.models.contato;
 
@@ -14,7 +16,7 @@ module.exports = function(app) {
 				res.json(contatos);
 			},
 			function(erro) {
-				console.error(erro)
+				console.error(erro);
 				res.status(500).json(erro);
 			}
 		);
@@ -25,11 +27,11 @@ module.exports = function(app) {
 		Contato.findById(_id).exec() .then(
 			function(contato) {
 				if (!contato) throw new Error("Contato não encontrado");
-				res.json(contato)
+				res.json(contato);
 			},
 			function(erro) {
 				console.log(erro);
-				res.status(404).json(erro)
+				res.status(404).json(erro);
 			}
 		);
 
@@ -37,7 +39,8 @@ module.exports = function(app) {
 
 	controller.removeContato = function(req, res) {
 
-		var _id = req.params.id;
+		var _id = sanitize(req.params.id);
+
 		Contato.remove({"_id" : _id}).exec().then(
 			function() {
 				res.end();
@@ -51,8 +54,16 @@ module.exports = function(app) {
 	controller.salvaContato = function(req, res) {
 
 		var _id = req.body._id;
-
-		req.body.emergencia = req.body.emergencia || null;
+		
+		/*
+		Independente da quantidade de parâmetros,
+		apenas selecionamos o nome, email e emergencia:
+		*/
+		var dados = {
+			"nome" : req.body.nome,
+			"email" : req.body.email,
+			"emergencia" : req.body.emergencia || null
+		};
 
 		if(_id) {
 			Contato.findByIdAndUpdate(_id, req.body).exec().then(
@@ -60,7 +71,7 @@ module.exports = function(app) {
 					res.json(contato);
 				},
 				function(erro) {
-					console.error(erro)
+					console.error(erro);
 					res.status(500).json(erro);
 				}
 			);
@@ -72,7 +83,7 @@ module.exports = function(app) {
 				},
 				function(erro) {
 					console.log(erro);
-					res.status(500).json(erro)
+					res.status(500).json(erro);
 				}
 			);
 		}
