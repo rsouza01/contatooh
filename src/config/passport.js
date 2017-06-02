@@ -13,9 +13,9 @@ module.exports = function() {
 	passport.use(new GitHubStrategy({
 			clientID: '514a3a7b77aa194aa439',
 			clientSecret: '36d5adeedd91e13cbf14ce4fcee15602b7fe6142',
-			callbackURL: 'https://contatooh-rsouza01.c9users.io/auth/github/callback'
-			//callbackURL: 'http://localhost:3000/auth/github/callback'
-			
+			//callbackURL: 'https://contatooh-rsouza01.c9users.io/auth/github/callback'
+			callbackURL: 'http://localhost:3000/auth/github/callback'
+
 		},
 		function (accessToken, refreshToken, profile, done) {
 			Usuario.findOrCreate(
