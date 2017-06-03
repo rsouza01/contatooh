@@ -6,17 +6,17 @@ var http = require('http');
 var express = require('express');
 var app = require('./config/express')();
 
-/** LOCAL */
-var CONFIG = require('./config/ambient');
-
-/** CLOUD9 */
-//var CONFIG = require('./config/ambient.c9');
-
+var config = require('./config/config')();
 
 require('./config/passport')();
-require('./config/database.js')('mongodb://' + CONFIG.dbAddress +'/contatooh');
+require('./config/database')(config.db);
 
+http.createServer(app).listen(config.port, config.address,
 
-http.createServer(app).listen(CONFIG.hostPort, CONFIG.hostAddress, function(){
-	console.log('Contatooh listening on port ' + CONFIG.hostPort);
+	function(){
+
+		console.log('\n\n************** CONTATOOH! Application **************\n\n');
+		console.log('****************************************************\n\n');
+
+		console.log('Express Https Server ' + config.address + ' (' + config.env + ') escutando na porta ' + config.port);
 });

@@ -1,5 +1,7 @@
 // config/protractor.js
 
+var config = require('./config')();
+
 exports.config = {
 
 	specs: ['../test/e2e/**/*Spec.js'],
