@@ -2,8 +2,6 @@
 
 # CONTATOOH - MEAN framework application
 
-## Build Status [![Build Status](https://travis-ci.org/rsouza01/contatooh.svg?branch=master)](https://travis-ci.org/rsouza01/contatooh)
-
 Small tutorial with the following technologies:
 
 * MongoDB
@@ -28,3 +26,5 @@ Small tutorial with the following technologies:
 ## Notes
 
 * __IN LINUX SYSTEMS DO NOT FORGET THE ln -s /usr/bin/nodejs /usr/bin/node__
+
+## Build Status [![Build Status](https://travis-ci.org/rsouza01/contatooh.svg?branch=master)](https://travis-ci.org/rsouza01/contatooh)
