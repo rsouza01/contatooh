@@ -6,7 +6,11 @@ var http = require('http');
 var express = require('express');
 var app = require('./config/express')();
 
+/** LOCAL */
 var CONFIG = require('./config/ambient');
+
+/** CLOUD9 */
+//var CONFIG = require('./config/ambient.c9');
 
 
 require('./config/passport')();

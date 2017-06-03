@@ -2,10 +2,10 @@
 
 module.exports = {
 
-  hostPort : process.env.PORT,
-  hostAddress : process.env.IP,
+  hostPort : 3000,
+  hostAddress : '127.0.0.1',
 
   dbPort : 27017,
-  dbAddress : process.env.IP,
+  dbAddress : '127.0.0.1',
   dbName : 'contatooh',
 }
