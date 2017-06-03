@@ -2,9 +2,7 @@
 
 # CONTATOOH - MEAN framework application
 
-## Build Status
-
-[![Build Status](https://travis-ci.org/rsouza01/contatooh.svg?branch=master)](https://travis-ci.org/rsouza01/contatooh)
+## Build Status [![Build Status](https://travis-ci.org/rsouza01/contatooh.svg?branch=master)](https://travis-ci.org/rsouza01/contatooh)
 
 Small tutorial with the following technologies:
 
