@@ -1,6 +1,6 @@
 // test/e2e/contatoPageSpec.js
 
-var ContatoPage = new require('./pages/contatoPage');
+var ContatoPage = new require('../pages/contatoPage');
 
 describe('Cadastro de contatos', function() {
 
