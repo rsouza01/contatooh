@@ -1,4 +1,5 @@
-/ contatooh/test/data.js
+// contatooh/test/data.js
+
 var MongoClient = require('mongodb').MongoClient;
 var contatos = [
 	{nome: "xyz1", email: 'xyz1@email.com.br'},
