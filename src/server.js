@@ -15,8 +15,12 @@ http.createServer(app).listen(config.port, config.address,
 
 	function(){
 
-		console.log('\n\n************** CONTATOOH! Application **************\n\n');
-		console.log('****************************************************\n\n');
+		console.log('\n\n********************** CONTATOOH! Application **********************\n\n');
+		console.log('********************************************************************\n\n');
 
-		console.log('Express Https Server ' + config.address + ' (' + config.env + ') escutando na porta ' + config.port);
+		console.log('Express Https Server ' + config.address + ' (' + config.env + ') listening on port ' + config.port);
+
+		console.log('\n\nStarted at ' + new Date());
+		console.log('\n\n********************************************************************\n\n');
+
 });
