@@ -1,6 +1,6 @@
 // test/e2e/contatosPageSpec.js
 
-var ContatosPage = new require('./pages/contatosPage');
+var ContatosPage = new require('../pages/contatosPage');
 
 describe('Página principal', function() {
 

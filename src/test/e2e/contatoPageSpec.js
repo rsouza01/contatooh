@@ -1,8 +1,5 @@
 // test/e2e/contatoPageSpec.js
 
-/** LOCAL */
-var CONFIG = require('ambient');
-
 var ContatoPage = new require('./pages/contatoPage');
 
 describe('Cadastro de contatos', function() {
