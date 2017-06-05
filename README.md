@@ -28,3 +28,8 @@ Small tutorial with the following technologies:
 * __IN LINUX SYSTEMS DO NOT FORGET THE ln -s /usr/bin/nodejs /usr/bin/node__
 
 ## Build Status [![Build Status](https://travis-ci.org/rsouza01/contatooh.svg?branch=master)](https://travis-ci.org/rsouza01/contatooh)
+
+## OPENSHIFT
+
+
+	oc new-app contatooh-rsouza01 nodejs-0.10 mongodb-2.4
